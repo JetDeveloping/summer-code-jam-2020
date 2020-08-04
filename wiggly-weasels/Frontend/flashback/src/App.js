@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-
+import Header from './components/Header';
+import Footer from './components/Footer';
 import { styleReset, List, ListItem, Divider } from 'react95';
 // pick a theme of your choice
 import original from "react95/dist/themes/original";
@@ -27,18 +28,30 @@ const GlobalStyles = createGlobalStyle`
   ${styleReset}
 `;
 
-const App = () => (
-  <div>
-    <GlobalStyles />
-    <ThemeProvider theme={original}>
-      <List>
-        <ListItem>🧯 FIRE!</ListItem>
-        <ListItem>🧻 Toilet Paper Crisis(2020)</ListItem>
-        <Divider />
-        <ListItem disabled>😴 Sleep</ListItem>
-      </List>
-    </ThemeProvider>
-  </div>
-);
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        {/* <Footer /> */}
+      </div>
+    );
+  }
+}
+
+// const App = () => (
+//   <div>
+//     <GlobalStyles />
+//     <ThemeProvider theme={original}>
+//       <List>
+//         <ListItem>🧯 FIRE!</ListItem>
+//         <ListItem>🧻 Toilet Paper Crisis(2020)</ListItem>
+//         <Divider />
+//         <ListItem disabled>😴 Sleep</ListItem>
+//       </List>
+//     </ThemeProvider>
+//   </div>
+// );
 
 export default App;
